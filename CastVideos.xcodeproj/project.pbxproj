@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08361A94193CDC8C00D39B13 /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08361A93193CDC8C00D39B13 /* GoogleCast.framework */; };
 		124377D0187CC2B500ADF736 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124377CF187CC2B500ADF736 /* DeviceTableViewController.m */; };
 		125F8FCA1880BA3300F14A9F /* logo_castvideos.png in Resources */ = {isa = PBXBuildFile; fileRef = 125F8FC81880BA3300F14A9F /* logo_castvideos.png */; };
 		125F8FCB1880BA3300F14A9F /* logo_castvideos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 125F8FC91880BA3300F14A9F /* logo_castvideos@2x.png */; };
@@ -120,6 +121,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08361A93193CDC8C00D39B13 /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleCast.framework; path = "../../Google Drive/2014 - Q2/example-apps/CastVideos-ios/GoogleCast.framework"; sourceTree = "<group>"; };
 		124377CE187CC2B500ADF736 /* DeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewController.h; sourceTree = "<group>"; };
 		124377CF187CC2B500ADF736 /* DeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
 		125F8FC81880BA3300F14A9F /* logo_castvideos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_castvideos.png; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08361A94193CDC8C00D39B13 /* GoogleCast.framework in Frameworks */,
 				CC4C24411921479600EB4713 /* GoogleCast.framework in Frameworks */,
 				12E0CCBD18511D8400447896 /* AVFoundation.framework in Frameworks */,
 				284CBD88182ADC2D007F65F9 /* CoreGraphics.framework in Frameworks */,
@@ -284,6 +287,7 @@
 		284CBD84182ADC2D007F65F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08361A93193CDC8C00D39B13 /* GoogleCast.framework */,
 				CC4C24401921479600EB4713 /* GoogleCast.framework */,
 				12E0CCBB184FFD9B00447896 /* AVFoundation.framework */,
 				284CBD85182ADC2D007F65F9 /* Foundation.framework */,
@@ -766,6 +770,10 @@
 					"$(inherited)",
 					..,
 					"/Users/javaclimber/Documents/chromecast/google-cast-ios-demo-google-code/Google_Cast_iOS",
+					/Users/jrgrafton/Google,
+					Drive/2014,
+					"-",
+					"Q2/example-apps/CastVideos-ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/CastVideos-Prefix.pch";
@@ -794,6 +802,10 @@
 					"$(inherited)",
 					..,
 					"/Users/javaclimber/Documents/chromecast/google-cast-ios-demo-google-code/Google_Cast_iOS",
+					/Users/jrgrafton/Google,
+					Drive/2014,
+					"-",
+					"Q2/example-apps/CastVideos-ios",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/CastVideos-Prefix.pch";

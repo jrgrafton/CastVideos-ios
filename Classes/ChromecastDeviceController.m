@@ -214,6 +214,11 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
   if (_features & ChromecastControllerFeatureHWVolumeControl) {
     [self.volumeChangeController captureVolumeButtons];
   }
+  
+  // Store sessionID in case of restart
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setObject:[self.selectedDevice deviceID] forKey:@"lastDeviceID"];
+  [defaults synchronize];
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager
@@ -260,6 +265,11 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
   if ([self.delegate respondsToSelector:@selector(didDisconnect)]) {
     [self.delegate didDisconnect];
   }
+    
+  // Remove previously stored deviceID
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults removeObjectForKey:@"lastDeviceID"];
+  [defaults synchronize];
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager
@@ -277,7 +287,13 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 
 #pragma mark - GCKDeviceScannerListener
 - (void)deviceDidComeOnline:(GCKDevice *)device {
-    NSLog(@"device found!! %@", device.friendlyName);
+  NSLog(@"device found!! %@", device.friendlyName);
+
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSString* lastDeviceID = [defaults objectForKey:@"lastDeviceID"];
+  if(lastDeviceID != nil && [[device deviceID] isEqualToString:lastDeviceID]){
+    [self connectToDevice:device];
+  }
 }
 
 - (void)deviceDidGoOffline:(GCKDevice *)device {
